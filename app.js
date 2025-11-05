@@ -86,7 +86,7 @@ gridc.addEventListener("click", (ec) => {
 
 
 //creamos cards de clientas
-const clienta = document.querySelector("#clientas");
+const clienta = document.querySelector("#gridClientas");
 
 for (const t of clienta){
   const card = document.createElement("article");
