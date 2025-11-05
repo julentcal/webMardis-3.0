@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  href="styles.css">
+    <title>MARDIS</title>
+</head>
+<body>
+    
+    <header class="topbar">
+        <h1>MARDIS</h1>
+        <nav>
+            <button class="btnH"><a href="#home">Home</a></button>
+            <button class="btnT"><a href="#tienda">Tienda</a></button>
+            <button class="btnF"><a href="form">Contacto</a></button>
+            <button class="btnC"><a href="#carrito">Carrito</a></button>
+        </nav>
+    </header>
+
+
+    <main class="container">
+        <section class="card">
+            <h2>¡Bienvenido a MARDIS!</h2>
+            <h4>Donde podrás personalizar tus complementos y marcar la diferencia vayas donde vayas.</h4>
+            <p>Explora nuestra tienda para descubrir una amplia gama de productos únicos y personalizables. En MARDIS escuchamos tus deseos y los hacemos realidad.</p>
+        </section>
+    
+    
+        <section class="card">
+            <h2>Nuestros bolsos</h2>
+            <div id="gridBolsos" class="grid"></div>    
+        </section>
+
+
+        <section class="card">
+            <h2>Nuestros complementos</h2>
+            <div id="gridComple" class="grid"></div>    
+        </section>
+
+
+        <section class="card">
+            <h2>Nuestras clientas</h2>
+            <div id="gridClienta" class="grid"> </div>
+        </section>
+
+        <section class="card" id="titform">
+        <a href="/form">Formulario</a>
+        </section>
+
+        <section class="card">
+        <h3>Carrito</h3>
+        <ul id="listaCarrito" class="list"></ul>
+        <div class="cart-summary">
+            <span id="txtUnidades">0 ud</span>
+            <strong id="txtTotal">0.00 €</strong>
+        </div>
+        </section>
+    </main>    
+
+
+    <footer class="footer">
+    <p>&copy; 2025 MARDIS. Todos los derechos reservados.</p>
+    </footer>
+
+
+    <script src="app.js"></script>
+
+
+</body>
+</html>
