@@ -10,22 +10,22 @@ function precioConIVA(precio = 0, iva= 0.21){
 
 
 const catbolsos = [
-  {id:1, name:"Eugenia", img: "./img/Eug.jpg", cattipo: "bolso", info: "Para cada día del año",price: 32},
-  {id:2, name:"Manuela", img: "./img/Eug.jpg", cattipo: "bolso", info:"El más versátil", price: 30},
-  {id:3, name:"Pepita", img: "./img/Eug.jpg", cattipo: "bolso", info:"Un toque más moderno", price: 32},
-  {id:4, name:"Valeria", img: "./img/Eug.jpg", cattipo: "bolso", info:"Perfecto para bodas", price: 30},
-  {id:5, name:"Carlota", img: "./img/Eug.jpg", cattipo: "bolso", info:"Para cualquier evento", price: 30},
-  {id:6, name:"Julieta", img: "./img/Eug.jpg", cattipo: "bolso", info:"Modelo japonés", price: 35},
+  {id:1, name:"Eugenia", img:"./img/Eug.jpg", cattipo: "bolso", info: "Para cada día del año",price: 32},
+  {id:2, name:"Manuela", img:"./img/Man.jpg", cattipo: "bolso", info:"El más versátil", price: 30},
+  {id:3, name:"Pepita", img:"./img/Pep.jpg", cattipo: "bolso", info:"Un toque más moderno", price: 32},
+  {id:4, name:"Valeria", img:"./img/Val.jpg", cattipo: "bolso", info:"Perfecto para bodas", price: 30},
+  {id:5, name:"Carlota", img:"./img/Carl.jpg", cattipo: "bolso", info:"Para cualquier evento", price: 30},
+  {id:6, name:"Julieta", img:"./img/Juli.jpg", cattipo: "bolso", info:"Modelo japonés", price: 35},
 ];
 
 
 const catcomple = [
-  {id:1, name:"Choker Flor", img: "./img/Eug.jpg", cattipo: "comple", info:"Un toque especial", price: 8},
-  {id:2, name:"Choker Pétalos", img: "./img/Eug.jpg", cattipo: "comple", info:"Eleva tu look", price: 10},
-  {id:3, name:"Pendientes simples", img: "./img/Eug.jpg", cattipo: "comple", info:"El más versátil", price: 10},
-  {id:4, name:"Pendientes dobles", img: "./img/Eug.jpg", cattipo: "comple", info:"Para las más atrevidas", price: 12},
-  {id:5, name:"Coletero", img: "./img/Eug.jpg", cattipo: "comple", info:"Complemento diario ideal ", price: 9},
-  {id:6, name:"Puños", img: "./img/Eug.jpg", cattipo: "comple", info:"Dale un toque a tu blazer", price: 25},
+  {id:1, name:"Choker Flor", img:"./img/Imagen de WhatsApp 2025-10-22 a las 09.38.45_5192163e.jpg", cattipo: "comple", info:"Un toque especial", price: 8},
+  {id:2, name:"Choker Pétalos", img:"./img/cpet.jpg", cattipo: "comple", info:"Eleva tu look", price: 10},
+  {id:3, name:"Pendientes simples", img:"./img/pendflor1.jpg", cattipo: "comple", info:"El más versátil", price: 10},
+  {id:4, name:"Pendientes dobles", img:"./img/Pend.jpg", cattipo: "comple", info:"Para las más atrevidas", price: 12},
+  {id:5, name:"Coletero", img:"./img/coletero.jpg", cattipo: "comple", info:"Complemento diario ideal ", price: 9},
+  {id:6, name:"Puños", img:"./img/puños.jpg", cattipo: "comple", info:"Dale un toque a tu blazer", price: 25},
 ];
 
 
@@ -43,10 +43,11 @@ for (const b of catbolsos){
   const card = document.createElement("article");
   card.className = "product";
   card.innerHTML = `
+
+    <img src="${b.img}" alt="Foto de ${b.name}">
     <h3>${b.name}</h4>
     <p>${b.info}</p>
-    <img src="${b.img}" alt="Foto de ${b.name}">
-    <p class="price">${b.price}</p>
+    <p class="price">${b.price} €</p>
     <button class="btn" data-id="${b.id}">Añadir</button>
     `;
   catalogob.appendChild(card);
@@ -68,9 +69,10 @@ for (const c of catcomple){
   const card = document.createElement("article");
   card.className = "product";
   card.innerHTML = `
+    <img src="${c.img}" alt="Foto de ${c.name}">
     <h3>${c.name}</h4>
     <p>${c.info}</p>
-    <p class="price">${c.price}</p>
+    <p class="price">${c.price}  €</p>
     <button class="btn" data-id="${c.id}">Añadir</button>    
   `;
   catalogoc.appendChild(card);
@@ -91,9 +93,10 @@ for (const t of clientas){
   const card = document.createElement("article");
   card.className = "product";
   card.innerHTML = `
-    <h3>${t.name}</h4>
-    <p>${t.info}</p>
+
     <img src="${t.img}" alt="Foto de ${t.name}">
+      <h3>${t.name}</h4>
+    <p>${t.info}</p>
     <p class="comment">${t.comment}</p>    
   `;
   catalogoClientas.appendChild(card);
