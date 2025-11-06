@@ -10,22 +10,22 @@ function precioConIVA(precio = 0, iva= 0.21){
 
 
 const catbolsos = [
-  {id:1, catname:"Eugenia", cattipo: "bolso", info: "Para cada día del año",price: 32},
-  {id:2, catname:"Manuela", cattipo: "bolso", info:"El más versátil", price: 30},
-  {id:3, catname:"Pepita", cattipo: "bolso", info:"Un toque más moderno", price: 32},
-  {id:4, catname:"Valeria", cattipo: "bolso", info:"Perfecto para bodas", price: 30},
-  {id:5, catname:"Carlota", cattipo: "bolso", info:"Para cualquier evento", price: 30},
-  {id:6, catname:"Julieta", cattipo: "bolso", info:"Modelo japonés", price: 35},
+  {id:1, name:"Eugenia", img: "./img/Eug.jpg", cattipo: "bolso", info: "Para cada día del año",price: 32},
+  {id:2, name:"Manuela", img: "./img/Eug.jpg", cattipo: "bolso", info:"El más versátil", price: 30},
+  {id:3, name:"Pepita", img: "./img/Eug.jpg", cattipo: "bolso", info:"Un toque más moderno", price: 32},
+  {id:4, name:"Valeria", img: "./img/Eug.jpg", cattipo: "bolso", info:"Perfecto para bodas", price: 30},
+  {id:5, name:"Carlota", img: "./img/Eug.jpg", cattipo: "bolso", info:"Para cualquier evento", price: 30},
+  {id:6, name:"Julieta", img: "./img/Eug.jpg", cattipo: "bolso", info:"Modelo japonés", price: 35},
 ];
 
 
 const catcomple = [
-  {id:1, catname:"Choker Flor", cattipo: "comple", info:"Un toque especial", price: 8},
-  {id:2, catname:"Choker Pétalos", cattipo: "comple", info:"Eleva tu look", price: 10},
-  {id:3, catname:"Pendientes simples", cattipo: "comple", info:"El más versátil", price: 10},
-  {id:4, catname:"Pendientes dobles", cattipo: "comple", info:"Para las más atrevidas", price: 12},
-  {id:5, catname:"Coletero", cattipo: "comple", info:"Complemento diario ideal ", price: 9},
-  {id:6, catname:"Puños", cattipo: "comple", info:"Dale un toque a tu blazer", price: 25},
+  {id:1, name:"Choker Flor", img: "./img/Eug.jpg", cattipo: "comple", info:"Un toque especial", price: 8},
+  {id:2, name:"Choker Pétalos", img: "./img/Eug.jpg", cattipo: "comple", info:"Eleva tu look", price: 10},
+  {id:3, name:"Pendientes simples", img: "./img/Eug.jpg", cattipo: "comple", info:"El más versátil", price: 10},
+  {id:4, name:"Pendientes dobles", img: "./img/Eug.jpg", cattipo: "comple", info:"Para las más atrevidas", price: 12},
+  {id:5, name:"Coletero", img: "./img/Eug.jpg", cattipo: "comple", info:"Complemento diario ideal ", price: 9},
+  {id:6, name:"Puños", img: "./img/Eug.jpg", cattipo: "comple", info:"Dale un toque a tu blazer", price: 25},
 ];
 
 
@@ -37,14 +37,15 @@ const clientas = [
 
 
 //creamos cards de bolsos
-const catalogob = document.querySelector("#catbolsos");
+const catalogob = document.querySelector("#gridBolsos");
 
-for (const b of catalogob){
+for (const b of catbolsos){
   const card = document.createElement("article");
   card.className = "product";
   card.innerHTML = `
     <h3>${b.name}</h4>
     <p>${b.info}</p>
+    <img src="${b.img}" alt="Foto de ${b.name}">
     <p class="price">${b.price}</p>
     <button class="btn" data-id="${b.id}">Añadir</button>
     `;
@@ -61,9 +62,9 @@ gridb.addEventListener("click", (eb) => {
 
 
 //creamos cards de complementos
-const catalogoc = document.querySelector("#catcomple");
+const catalogoc = document.querySelector("#gridComple");
 
-for (const c of catalogoc){
+for (const c of catcomple){
   const card = document.createElement("article");
   card.className = "product";
   card.innerHTML = `
@@ -75,9 +76,7 @@ for (const c of catalogoc){
   catalogoc.appendChild(card);
 }
 
-const gridc = document.querySelector("#gridComple");
-
-gridc.addEventListener("click", (ec) => {
+catalogoc.addEventListener("click", (ec) => {
   const btn = ec.target.closest('button[data-id]');
   if (!btn) return;
   const id = +btn.dataset.id;
@@ -86,9 +85,9 @@ gridc.addEventListener("click", (ec) => {
 
 
 //creamos cards de clientas
-const clienta = document.querySelector("#gridClientas");
+const catalogoClientas = document.querySelector("#gridClientas");
 
-for (const t of clienta){
+for (const t of clientas){
   const card = document.createElement("article");
   card.className = "product";
   card.innerHTML = `
@@ -97,7 +96,7 @@ for (const t of clienta){
     <img src="${t.img}" alt="Foto de ${t.name}">
     <p class="comment">${t.comment}</p>    
   `;
-  catalogoc.appendChild(card);
+  catalogoClientas.appendChild(card);
 };
 
 
