@@ -7,8 +7,6 @@ function precioConIVA(precio = 0, iva= 0.21){
     return precio + (precio * iva);
 }
 
-
-
 const catbolsos = [
   {id:1, name:"Eugenia", img:"./img/Eug.jpg", cattipo: "bolso", info: "Para cada día del año",price: 32},
   {id:2, name:"Manuela", img:"./img/Man.jpg", cattipo: "bolso", info:"El más versátil", price: 30},
@@ -20,19 +18,19 @@ const catbolsos = [
 
 
 const catcomple = [
-  {id:1, name:"Choker Flor", img:"./img/Imagen de WhatsApp 2025-10-22 a las 09.38.45_5192163e.jpg", cattipo: "comple", info:"Un toque especial", price: 8},
-  {id:2, name:"Choker Pétalos", img:"./img/cpet.jpg", cattipo: "comple", info:"Eleva tu look", price: 10},
-  {id:3, name:"Pendientes simples", img:"./img/pendflor1.jpg", cattipo: "comple", info:"El más versátil", price: 10},
-  {id:4, name:"Pendientes dobles", img:"./img/Pend.jpg", cattipo: "comple", info:"Para las más atrevidas", price: 12},
-  {id:5, name:"Coletero", img:"./img/coletero.jpg", cattipo: "comple", info:"Complemento diario ideal ", price: 9},
-  {id:6, name:"Puños", img:"./img/puños.jpg", cattipo: "comple", info:"Dale un toque a tu blazer", price: 25},
+  {id:7, name:"Choker Flor", img:"./img/Imagen de WhatsApp 2025-10-22 a las 09.38.45_5192163e.jpg", cattipo: "comple", info:"Un toque especial", price: 8},
+  {id:8, name:"Choker Pétalos", img:"./img/cpet.jpg", cattipo: "comple", info:"Eleva tu look", price: 10},
+  {id:9, name:"Pendientes simples", img:"./img/pendflor1.jpg", cattipo: "comple", info:"El más versátil", price: 10},
+  {id:10, name:"Pendientes dobles", img:"./img/Pend.jpg", cattipo: "comple", info:"Para las más atrevidas", price: 12},
+  {id:11, name:"Coletero", img:"./img/coletero.jpg", cattipo: "comple", info:"Complemento diario ideal ", price: 9},
+  {id:12, name:"Puños", img:"./img/puños.jpg", cattipo: "comple", info:"Dale un toque a tu blazer", price: 25},
 ];
 
 
 const clientas = [
-    {id:1, name:"María López", img:"./img/bmanu.jpg", comment:'"Me encanta mi bolso Manuela, es perfecto para cualquier ocasión."'},
-    {id:2, name:"Ana García", img:"./img/pbit.jpg", comment:'"Luciendo mis pendientes y bolso Pepita por Italia."'},
-    {id:3, name:"Lucía Fernández", img:"./img/beu.jpg", comment:'"El bolso Eugenia en marrón es súper ponible y me encanta!!"'},
+    {name:"María López", img:"./img/bmanu.jpg", comment:'"Me encanta mi bolso Manuela, es perfecto para cualquier ocasión."'},
+    {name:"Ana García", img:"./img/pbit.jpg", comment:'"Luciendo mis pendientes y bolso Pepita por Italia. No me lo quito, pega con todo!"'},
+    {name:"Lucía Fernández", img:"./img/beu.jpg", comment:'"El bolso Eugenia en marrón es súper ponible y me encanta!!"'},
 ];
 
 
@@ -95,8 +93,7 @@ for (const t of clientas){
   card.innerHTML = `
 
     <img src="${t.img}" alt="Foto de ${t.name}">
-      <h3>${t.name}</h4>
-    <p>${t.info}</p>
+      <h3>${t.name}</h3>
     <p class="comment">${t.comment}</p>    
   `;
   catalogoClientas.appendChild(card);
@@ -156,3 +153,5 @@ function dibujarCarrito(lineas = []){
     txtUds.textContent = `${tUnidades} ud`;
     txtTotal.textContent = aEuros(precioConIVA(tImporte));
 }
+
+
