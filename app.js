@@ -1,5 +1,4 @@
 
-const buscarProducto = id => productos.find(p => p.id === id);
 
 let carrito = [];
 
@@ -8,31 +7,34 @@ function precioConIVA(precio = 0, iva= 0.21){
 }
 
 const catbolsos = [
-  {id:1, name:"Eugenia", img:"./img/Eug.jpg", cattipo: "bolso", info: "Para cada día del año",price: 32},
-  {id:2, name:"Manuela", img:"./img/Man.jpg", cattipo: "bolso", info:"El más versátil", price: 30},
-  {id:3, name:"Pepita", img:"./img/Pep.jpg", cattipo: "bolso", info:"Un toque más moderno", price: 32},
-  {id:4, name:"Valeria", img:"./img/Val.jpg", cattipo: "bolso", info:"Perfecto para bodas", price: 30},
-  {id:5, name:"Carlota", img:"./img/Carl.jpg", cattipo: "bolso", info:"Para cualquier evento", price: 30},
-  {id:6, name:"Julieta", img:"./img/Juli.jpg", cattipo: "bolso", info:"Modelo japonés", price: 35},
+  {id:1, nombre:"Eugenia", img:"./img/Eug.jpg", tipo: "bolso", info: "Para cada día del año",precio: 32},
+  {id:2, nombre:"Manuela", img:"./img/Man.jpg", tipo: "bolso", info:"El más versátil", precio: 30},
+  {id:3, nombre:"Pepita", img:"./img/Pep.jpg", tipo: "bolso", info:"Un toque más moderno", precio: 32},
+  {id:4, nombre:"Valeria", img:"./img/Val.jpg", tipo: "bolso", info:"Perfecto para bodas", precio: 30},
+  {id:5, nombre:"Carlota", img:"./img/Carl.jpg", tipo: "bolso", info:"Para cualquier evento", precio: 30},
+  {id:6, nombre:"Julieta", img:"./img/Juli.jpg", tipo: "bolso", info:"Modelo japonés", precio: 35},
 ];
 
 
 const catcomple = [
-  {id:7, name:"Choker Flor", img:"./img/Imagen de WhatsApp 2025-10-22 a las 09.38.45_5192163e.jpg", cattipo: "comple", info:"Un toque especial", price: 8},
-  {id:8, name:"Choker Pétalos", img:"./img/cpet.jpg", cattipo: "comple", info:"Eleva tu look", price: 10},
-  {id:9, name:"Pendientes simples", img:"./img/pendflor1.jpg", cattipo: "comple", info:"El más versátil", price: 10},
-  {id:10, name:"Pendientes dobles", img:"./img/Pend.jpg", cattipo: "comple", info:"Para las más atrevidas", price: 12},
-  {id:11, name:"Coletero", img:"./img/coletero.jpg", cattipo: "comple", info:"Complemento diario ideal ", price: 9},
-  {id:12, name:"Puños", img:"./img/puños.jpg", cattipo: "comple", info:"Dale un toque a tu blazer", price: 25},
+  {id:7, nombre:"Choker Flor", img:"./img/Imagen de WhatsApp 2025-10-22 a las 09.38.45_5192163e.jpg", tipo: "comple", info:"Un toque especial", precio: 8},
+  {id:8, nombre:"Choker Pétalos", img:"./img/cpet.jpg", tipo: "comple", info:"Eleva tu look", precio: 10},
+  {id:9, nombre:"Pendientes simples", img:"./img/pendflor1.jpg", tipo: "comple", info:"El más versátil", precio: 10},
+  {id:10, nombre:"Pendientes dobles", img:"./img/Pend.jpg", tipo: "comple", info:"Para las más atrevidas", precio: 12},
+  {id:11, nombre:"Coletero", img:"./img/coletero.jpg", tipo: "comple", info:"Complemento diario ideal ", precio: 9},
+  {id:12, nombre:"Puños", img:"./img/puños.jpg", tipo: "comple", info:"Dale un toque a tu blazer", precio: 25},
 ];
 
 
 const clientas = [
-    {name:"María López", img:"./img/bmanu.jpg", comment:'"Me encanta mi bolso Manuela, es perfecto para cualquier ocasión."'},
-    {name:"Ana García", img:"./img/pbit.jpg", comment:'"Luciendo mis pendientes y bolso Pepita por Italia. No me lo quito, pega con todo!"'},
-    {name:"Lucía Fernández", img:"./img/beu.jpg", comment:'"El bolso Eugenia en marrón es súper ponible y me encanta!!"'},
+    {nombre:"María López", img:"./img/bmanu.jpg", comment:'"Me encanta mi bolso Manuela, es perfecto para cualquier ocasión."'},
+    {nombre:"Ana García", img:"./img/pbit.jpg", comment:'"Luciendo mis pendientes y bolso Pepita por Italia. No me lo quito, pega con todo!"'},
+    {nombre:"Lucía Fernández", img:"./img/beu.jpg", comment:'"El bolso Eugenia en marrón es súper ponible y me encanta!!"'},
 ];
 
+const productos = [...catbolsos, ...catcomple];
+
+const buscarProducto = id => productos.find(p => p.id === id);
 
 //creamos cards de bolsos
 const catalogob = document.querySelector("#gridBolsos");
@@ -42,21 +44,22 @@ for (const b of catbolsos){
   card.className = "product";
   card.innerHTML = `
 
-    <img src="${b.img}" alt="Foto de ${b.name}">
-    <h3>${b.name}</h4>
+    <img src="${b.img}" alt="Foto de ${b.nombre}">
+    <h3>${b.nombre}</h4>
     <p>${b.info}</p>
-    <p class="price">${b.price} €</p>
+    <p class="precio">${b.precio} €</p>
     <button class="btn" data-id="${b.id}">Añadir</button>
     `;
   catalogob.appendChild(card);
 }
-const gridb = document.querySelector("#gridBolsos");
 
-gridb.addEventListener("click", (eb) => {
-  const btn = eb.target.closest('button[data-id]');
+const gridb = document.querySelector("#gridBolsos");
+gridb.addEventListener("click", (ev) => {
+  const btn = ev.target.closest('button[data-id]');
   if (!btn) return;
   const id = +btn.dataset.id;
-  agregarb(id);
+  
+  agregar(id);
 });
 
 
@@ -67,20 +70,20 @@ for (const c of catcomple){
   const card = document.createElement("article");
   card.className = "product";
   card.innerHTML = `
-    <img src="${c.img}" alt="Foto de ${c.name}">
-    <h3>${c.name}</h4>
+    <img src="${c.img}" alt="Foto de ${c.nombre}">
+    <h3>${c.nombre}</h4>
     <p>${c.info}</p>
-    <p class="price">${c.price}  €</p>
+    <p class="precio">${c.precio}  €</p>
     <button class="btn" data-id="${c.id}">Añadir</button>    
   `;
   catalogoc.appendChild(card);
 }
 
-catalogoc.addEventListener("click", (ec) => {
-  const btn = ec.target.closest('button[data-id]');
+catalogoc.addEventListener("click", (ev) => {
+  const btn = ev.target.closest('button[data-id]');
   if (!btn) return;
   const id = +btn.dataset.id;
-  agregarc(id);
+  agregar(id);
 });
 
 
@@ -92,8 +95,8 @@ for (const t of clientas){
   card.className = "product";
   card.innerHTML = `
 
-    <img src="${t.img}" alt="Foto de ${t.name}">
-      <h3>${t.name}</h3>
+    <img src="${t.img}" alt="Foto de ${t.nombre}">
+      <h3>${t.nombre}</h3>
     <p class="comment">${t.comment}</p>    
   `;
   catalogoClientas.appendChild(card);
@@ -101,9 +104,10 @@ for (const t of clientas){
 
 
 document.querySelector("#btnVaciar").addEventListener("click", () =>{
-    carrito = [];             // vaciar array
-    dibujarCarrito(carrito);  // refrescar UI
+    carrito = [];             
+    dibujarCarrito(carrito);  
 });
+
 
 function agregar(idProducto){
     const p = buscarProducto(idProducto); // busca en catálogo
@@ -154,4 +158,8 @@ function dibujarCarrito(lineas = []){
     txtTotal.textContent = aEuros(precioConIVA(tImporte));
 }
 
+
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
+});
 

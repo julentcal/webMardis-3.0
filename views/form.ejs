@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <form id="form" action="/form" method="POST">
+            <h2>Contacto</h2>
+            <label>Nombre:
+                <input type="text" name="name" value="<%= name || '' %>" required>
+            </label>
+        <p></p>
+            <label>Email:
+                <input type="email" name="email" value="<%= email || '' %>" required>
+            </label>
+        <p></p>
+            <label>¿Qué desea?
+                <select name="options" required>
+                    <option value="" disabled selected>Seleccione una opción</option>
+                    <option value="consulta" <%= options === 'consulta' ? 'selected' : '' %>>Consulta</option>
+                    <option value="sugerencia" <%= options === 'sugerencia' ? 'selected' : '' %>>Sugerencia</option>
+                    <option value="reclamo" <%= options === 'reclamo' ? 'selected' : '' %>>Reclamo</option>
+                </select>
+            </label>
+        <p> </p>
+            <fieldset>
+                <label><input type="checkbox" name="type" value="bolso"
+                    <%= (options ||[]).includes('bolso') ? 'checked' : '' %>> Bolso</label>
+                <label><input type="checkbox" name="type" value="choker"
+                    <%= (options ||[]).includes('choker') ? 'checked' : '' %>> Choker</label>
+                <label><input type="checkbox" name="type" value="pendientes"
+                    <%= (options ||[]).includes('pendientes') ? 'checked' : '' %>> Pendientes</label>
+                <label><input type="checkbox" name="type" value="otros"
+                    <%= (options ||[]).includes('otros') ? 'checked' : '' %>> Otros</label>
+            </fieldset>
+        <p></p>
+            <label>Mensaje:
+                <textarea name="message" required><%= message || '' %></textarea>
+            </label>
+        <p></p>
+            <button type="submit">Enviar</button>
+        </form>
+
+        <p><a href="/">Volver al formulario</a> </p>
+
+</body>
+</html>
