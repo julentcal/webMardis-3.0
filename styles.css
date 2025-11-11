@@ -43,12 +43,13 @@ header .btnh{
     background-color: #ff7ceb;
     color: var(--muted);
     border: #fd22dc;
-    padding: 0.1rem 0.3rem;
+    padding: 0.6rem 0.8rem;
+    margin: 0px;
     font-size: 0.8rem;
     cursor: pointer;
     border-radius: 0.5rem;
-    transition: background-color 0.3s ease;
-    height: 20px;
+    transition: background-color 0.4s ease;
+    
 }
 
 .btnh:hover{
@@ -56,7 +57,31 @@ header .btnh{
     color: var(--text);
 }
 
+nav a:hover{ /*NO FUNCIONA*/
+    text-decoration: none;
+    list-style-type: none;
+}
 
+.arriba{
+  position: fixed;
+  color: var(--text);
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  border-radius: 40px ;
+  border: solid;
+  font-size: 30px;
+  background-color:  var(--bg);
+  text-align: center;
+  }
+
+  .flecha{  
+  padding: 0.2em;
+  margin: auto;
+    width: 50px
+
+}
 
 /*MAIN*/
 main{
