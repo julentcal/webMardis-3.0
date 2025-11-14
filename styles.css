@@ -12,8 +12,8 @@
 }
 
 body{
-    margin: 0;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: auto;
+    font-family: 'neue';
     color: var(--text);
     background-color: #fffde7;
     background: var(--panel);
@@ -24,7 +24,7 @@ header{
     display: flex;
     align-items: center;
     background-color: #fffa9d;
-    padding: 1 rem 2 rem;
+    padding: 1rem 5rem;
     justify-content: space-between;
     position: sticky;
     top:0;
@@ -34,9 +34,7 @@ header{
 header h1{
     margin: 0;
     font-size: 4rem;
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    padding-left: 6rem;
-
+    font-family: 'mardis';
 }
 
 header .btnh{
@@ -49,7 +47,6 @@ header .btnh{
     cursor: pointer;
     border-radius: 0.5rem;
     transition: background-color 0.4s ease;
-    
 }
 
 .btnh:hover{
@@ -87,7 +84,7 @@ nav a:hover{ /*NO FUNCIONA*/
 
 /*MAIN*/
 main{
-    margin: 2rem auto;
+    margin: 1rem auto;
     max-width: 1200px;
     padding: 0 2rem;
 }
@@ -106,12 +103,8 @@ main .card{
 /*CARDS*/
 .grid{
   background:var(--panel);
-  border-radius:16px;
-  padding:1.25rem;
-  margin-bottom:1.25rem;
-}
-
-.grid{
+  border-radius:20px;
+  padding:1rem;
   display:grid;
   grid-template-columns:repeat(auto-fill, minmax(220px, 1fr));
   gap:1rem;
@@ -123,7 +116,7 @@ main .card{
   gap:.5rem;
   border:1px dashed #f5f1a9; 
   padding:1rem; 
-  border-radius:12px;
+  border-radius:20px;
   background:#fffbc9;
     box-shadow:0 3px 10px  #ff7ceb;
 }
@@ -137,7 +130,7 @@ img {
     width: 100%;
     height: 200%;
     object-fit: contain;
-    border-radius: 8px;
+    border-radius: 20px;
 }
 
 .card button{
@@ -148,7 +141,7 @@ img {
     font-size: 1rem;
     cursor: pointer;
     border-radius: 0.5rem;
-    transition: background-color 0.3s ease;
+    transition: 0.3s ease;
 }
 
 .card p{
@@ -174,4 +167,12 @@ img {
 }
 
 
+@font-face {
+    font-family: 'mardis';
+    src: url(/fonts/Bogista\ DEMO.otf);
+}
 
+@font-face {
+    font-family: 'neue';
+    src: url(/fonts/ComicNeue-Regular_1.otf);
+}
