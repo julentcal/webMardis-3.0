@@ -77,9 +77,11 @@ nav a:hover{ /*NO FUNCIONA*/
   }
 
   .flecha{  
-  padding: 0.2em;
-  margin: auto;
-    width: 50px
+  
+  padding-bottom: 112%;
+  padding-right: 15%;
+  margin: 0.1em;
+  width: 50px
 
 }
 

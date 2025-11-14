@@ -1,5 +1,3 @@
-
-
 let carrito = [];
 
 function precioConIVA(precio = 0, iva= 0.21){
