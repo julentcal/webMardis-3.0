@@ -101,7 +101,6 @@ for (const t of clientas){
   catalogoClientas.appendChild(card);
 };
 
-
 document.querySelector("#btnVaciar").addEventListener("click", () =>{
     carrito = [];             
     dibujarCarrito(carrito);  

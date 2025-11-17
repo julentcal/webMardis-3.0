@@ -3,11 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Formulario</title>
 </head>
 <body>
     
-    <form id="form" action="/form" method="POST">
+        <%  if (typeof errores !== "undefined" && errores.length) { %>
+
+        <div style="color:red;">
+
+            <p>Per favoreee, corrige estos errores:</p>
+            <ul>
+                <%  
+                errores.forEach (e => { 
+                %>
+                    <li><%= e %></li>
+                <% }) %>
+            </ul>
+
+        </div>
+
+        <% } %>
+
+    <form action="/form" method="POST">
             <h2>Contacto</h2>
             <label>Nombre:
                 <input type="text" name="name" value="<%= name || '' %>" required>
