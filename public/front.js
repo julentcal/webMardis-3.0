@@ -1,3 +1,4 @@
+
 let carrito = [];
 
 function precioConIVA(precio = 0, iva= 0.21){
@@ -157,7 +158,5 @@ function dibujarCarrito(lineas = []){
 }
 
 
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
-});
+
 

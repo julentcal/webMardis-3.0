@@ -169,10 +169,10 @@ img {
 
 @font-face {
     font-family: 'mardis';
-    src: url(/fonts/Bogista\ DEMO.otf);
+    src: url(../fonts/Bogista\ DEMO.otf);
 }
 
 @font-face {
     font-family: 'neue';
-    src: url(/fonts/ComicNeue-Regular_1.otf);
+    src: url(../fonts/ComicNeue-Regular_1.otf);
 }
