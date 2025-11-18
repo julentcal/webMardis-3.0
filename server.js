@@ -1,3 +1,4 @@
+//CONFIGURACIÓN INICIAL
 const express = require("express");
 
 const app = express();
@@ -18,6 +19,12 @@ app.use(express.static(path.join(__dirname, "public")));
 app.set("view engine", "ejs");
 
 app.use(express.urlencoded({ extended: true }));
+
+//MIDDLEWARE AUTENTIFICACIÓN
+function requiereAuth(req, res, next) {
+    if (req.session.user) return next();
+    res.redirect("/login");
+}
 
 //FORMULARIO
 //RUTA GET
@@ -74,7 +81,7 @@ app.get("/login", (req, res) => {
   res.render("login", { error:null });
 });
 
-app.post("/login", (res,res) =>{
+app.post("/login", (req,res) =>{
   console.log(req.body);
   const {usuario, password} = req.body;
 
@@ -86,12 +93,11 @@ app.post("/login", (res,res) =>{
     res.status(401).render("login", {error:"Usuario o contraseña incorrectos"});
   });    
 
-
+//PERFIL
 app.get("/perfil", requiereAuth, (req, res) => {
     const user = req.session.user;
     res.render("perfil", { user });
 });
-
 
 app.post("/logout", (req, res) => {
     req.session.destroy(() => {
