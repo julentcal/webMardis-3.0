@@ -27,15 +27,15 @@
 
     <form action="/form" method="POST">
             <h2>Contacto</h2>
-            <label>Nombre:
+            <label><strong>Nombre:</strong>
                 <input type="text" name="name" value="<%= name || '' %>" required>
             </label>
         <p></p>
-            <label>Email:
+            <label><strong>Email:</strong>
                 <input type="email" name="email" value="<%= email || '' %>" required>
             </label>
         <p></p>
-            <label>¿Qué desea?
+            <label><strong>¿Qué desea?</strong>
                 <select name="options" required>
                     <option value="" disabled selected>Seleccione una opción</option>
                     <option value="consulta" <%= options === 'consulta' ? 'selected' : '' %>>Consulta</option>
@@ -55,7 +55,7 @@
                     <%= (options ||[]).includes('otros') ? 'checked' : '' %>> Otros</label>
             </fieldset>
         <p></p>
-            <label>Mensaje:
+            <label><strong>Mensaje:</strong>
                 <textarea name="message" required><%= message || '' %></textarea>
             </label>
         <p></p>
