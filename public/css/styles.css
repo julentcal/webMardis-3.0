@@ -245,6 +245,10 @@ form h2 {
     font-family: 'mardis';
 }
 
+.login{
+    text-align: center;
+}
+
 /*FOOTER*/
 .footer{ 
     text-align:center; 

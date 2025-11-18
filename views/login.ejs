@@ -6,9 +6,9 @@
     <link rel="stylesheet"  href="./css/styles.css">
     <title>Login</title>
 </head>
-<body>
-    <h1>¿Eres socia?</h1>
-    <h2>Entra en tu cuenta</h2>
+<body >
+    <h1 class="login">¿Eres socia?</h1>
+    <h2 class="login">Entra en tu cuenta</h2>
 
     <% if (error) { %>
         <p style="color:crimson;"><%= error %></p>
@@ -26,11 +26,11 @@
             Contraseña: 
             <input type="password" name="password" required>
         </label>
-
+        <br><br>
         <button>Entrar</button>
     </form>
 
-    <p><a href="/">Inicio</a></p>
+    <p class="login"><a href="/">Inicio</a></p>
 
 </body>
 </html>
