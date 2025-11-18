@@ -94,7 +94,7 @@ main .card{
     margin-bottom: 2rem;
 }
 
-#titform {
+#titform  {
     font-size: 12px;
     text-align: center;
     text-decoration: none;
@@ -103,6 +103,8 @@ main .card{
 .card .textoContainer{
     font-size: 16px;
 }
+
+
 
 /*CARDS*/
 .grid{
@@ -199,7 +201,27 @@ form h2 {
 
 .btnform:hover{
     background-color: var(--primary);
-    color: var(--text);
+    color: var(--text)
+}
+
+#login p{
+     font-size: 18px;
+}
+
+.btnlogin{
+    background-color: #ff7ceb;
+    color: var(--panel);
+    border: #fd22dc;
+    padding: 0.5rem 1rem;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    transition: 0.3s ease;
+}
+
+.btnlogin:hover{
+    background-color: var(--primary);
+    color: var(--text)
 }
 
 .volver{
