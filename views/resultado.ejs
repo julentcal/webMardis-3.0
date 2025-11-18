@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  href="./css/styles.css">
+    <title>Resumen mensaje</title>
+</head>
+<body class="mensajeForm">
+
+    <h1 class="tituloResumen">Resumen del mensaje</h1>
+
+    <p><strong>Nombre: </strong> <%= name %> </p>
+
+    <p><strong>Correo: </strong> <%= email %> </p>
+
+    <p><strong>Complemento: </strong></p>
+    <% if (type && type.length) { %>
+        <ul>
+            <% type.forEach(i => { %>
+
+                <li> <%= i %> </li>
+
+            <% }) %>
+        </ul>
+     <% } else { %>
+        <p>Sin complementos</p>
+    <% } %>
+
+    <p><strong>Mensaje:</strong> <%= message %></p>
+
+    <p class="volver">
+        <a href="/form" >Volver al formulario</a>
+        <a href="/" >Inicio</a>
+    </p>
+    
+</body>
+</html>

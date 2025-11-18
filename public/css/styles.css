@@ -111,13 +111,13 @@ main .card{
 }
 
 .product{
-  display:flex; 
-  flex-direction:column; 
-  gap:.5rem;
-  border:1px dashed #f5f1a9; 
-  padding:1rem; 
-  border-radius:20px;
-  background:#fffbc9;
+    display:flex; 
+    flex-direction:column; 
+    gap:.5rem;
+    border:1px dashed #f5f1a9; 
+    padding:1rem; 
+    border-radius:20px;
+    background:#fffbc9;
     box-shadow:0 3px 10px  #ff7ceb;
 }
 
@@ -155,8 +155,49 @@ img {
 
 /*CARRITO*/
 .card .list{
+    font-size: 5px;
     list-style: none;
     box-shadow:0 3px 10px  #ff7ceb;
+}
+
+/*FORMULARIO*/
+form {
+    max-width: 700px;
+    margin: 0 auto;
+    margin-top: 2rem;
+    background: var(--panel);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px var(--bg);
+}
+
+form h2 {
+    text-align: center;
+    margin: 2rem;
+    font-size: 50px;
+    font-family: 'mardis';
+}
+
+
+.volver{
+    text-align: center;
+}
+
+.mensajeForm{
+    max-width: 700px;
+    margin: 0 auto;
+    margin-top: 2rem;
+    background: var(--panel);
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px var(--bg);
+}
+
+.tituloResumen{
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 50px;
+    font-family: 'mardis';
 }
 
 /*FOOTER*/

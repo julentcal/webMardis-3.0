@@ -21,18 +21,19 @@ app.use(express.urlencoded({ extended: true }));
 
 //FORMULARIO
 //RUTA GET
-app.get("/views/form.ejs", (req, res) => {
+app.get("/form", (req, res) => {
   res.render("form", {
     name: "",
     email:"",
     options: "",
     type: [],
     message: " ",
+    errores: []
   });
 });
 
 //RUTA POST 
-app.post("/views/form.ejs", (req, res) => {
+app.post("/form", (req, res) => {
   console.log(req.body);
   const { name, email, options, message } = req.body;
   let type = req.body.type || [];
@@ -67,4 +68,8 @@ app.post("/views/form.ejs", (req, res) => {
     message
   } );
 
+});
+
+app.listen(PORT, () => {
+    console.log(`Servidor escuchando en: http://localhost:${PORT}`);
 });
