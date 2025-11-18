@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"  href="./css/styles.css">
+    <title>Login</title>
+</head>
+<body>
+    <h1>¿Eres socia?</h1>
+    <h2>Entra en tu cuenta</h2>
+
+    <% if (error) { %>
+        <p style="color:crimson;"><%= error %></p>
+    <% } %>
+
+    <form method="POST" action="/login">
+
+        <label>
+            Usuario: 
+            <input type="text" name="usuario" required>
+        </label>
+        <br><br>
+
+        <label>
+            Contraseña: 
+            <input type="password" name="password" required>
+        </label>
+
+        <button>Entrar</button>
+    </form>
+
+    <p><a href="/">Inicio</a></p>
+
+</body>
+</html>

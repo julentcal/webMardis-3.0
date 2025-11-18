@@ -66,8 +66,37 @@ app.post("/form", (req, res) => {
     options,
     type,
     message
-  } );
+  });
+});
 
+//LOGIN
+app.get("/login", (req, res) => {
+  res.render("login", { error:null });
+});
+
+app.post("/login", (res,res) =>{
+  console.log(req.body);
+  const {usuario, password} = req.body;
+
+    if (usuario && password === "mardis") {
+      req.session.user = {nombre: usuario};
+      return res.redirect("/perfil");
+    }
+
+    res.status(401).render("login", {error:"Usuario o contraseña incorrectos"});
+  });    
+
+
+app.get("/perfil", requiereAuth, (req, res) => {
+    const user = req.session.user;
+    res.render("perfil", { user });
+});
+
+
+app.post("/logout", (req, res) => {
+    req.session.destroy(() => {
+        res.redirect("/");
+    });
 });
 
 app.listen(PORT, () => {
