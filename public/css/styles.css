@@ -249,6 +249,28 @@ form h2 {
     text-align: center;
 }
 
+.perfil {
+    padding: 5rem;
+    margin:auto;
+    text-align: center;
+}
+
+.perfil button{
+    background-color: #ff7ceb;
+    color: var(--panel);
+    border: #fd22dc;
+    padding: 0.5rem 1rem;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    transition: 0.3s ease;
+}
+
+.perfil button :hover{
+    background-color: var(--primary);
+    color: var(--text)
+}
+
 /*FOOTER*/
 .footer{ 
     text-align:center; 

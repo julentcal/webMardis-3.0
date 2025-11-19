@@ -9,7 +9,7 @@ const PORT = 3000;
 
 const dayjs = require("dayjs");
 require("dayjs/locale/es"); 
-dayjs.locale("es");         
+dayjs.locale("es");      
 
 const cookieParser = require("cookie-parser");
 const session = require("express-session");
@@ -19,6 +19,18 @@ app.use(express.static(path.join(__dirname, "public")));
 app.set("view engine", "ejs");
 
 app.use(express.urlencoded({ extended: true }));
+
+app.use(cookieParser());
+
+app.use(session({
+    secret: "clave para sesiones",
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+        httpOnly: true,            // no accesible desde JS del cliente (seguridad)
+        maxAge: 1000 * 60 * 30     // caduca a los 30 minutos de inactividad
+    }
+}));
 
 //MIDDLEWARE AUTENTIFICACIÓN
 function requiereAuth(req, res, next) {
