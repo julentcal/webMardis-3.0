@@ -161,10 +161,11 @@ img {
 
 /*CARRITO*/
 .card .list{
-    font-size: 5px;
+    font-size: 18px;
     list-style: none;
     box-shadow:0 3px 10px  #ff7ceb;
 }
+
 
 /*FORMULARIO*/
 form {
