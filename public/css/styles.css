@@ -4,11 +4,12 @@
   --muted:#ff96f1;     
   --text:#ff46da;      
   --primary:#fff70b;   
- 
+  --font-family: 'neue';
 }
 
 * {
     box-sizing: border-box;
+    font-family: 'neue';
 }
 
 body{
@@ -40,7 +41,8 @@ header h1{
 header .btnh{
     background-color: #ff7ceb;
     color: var(--muted);
-    border: #fd22dc;
+    border: none;
+    text-decoration: none;
     padding: 0.6rem 0.8rem;
     margin: 0px;
     font-size: 0.8rem;
