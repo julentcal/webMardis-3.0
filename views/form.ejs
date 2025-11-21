@@ -44,7 +44,7 @@
                 </select>
             </label>
         <p> </p>
-            <fieldset>
+            <fieldset class="checkboxFormulario">
                 <label><input type="checkbox" name="type" value="bolso"
                     <%= (options ||[]).includes('bolso') ? 'checked' : '' %>> Bolso</label>
                 <label><input type="checkbox" name="type" value="choker"
@@ -55,11 +55,11 @@
                     <%= (options ||[]).includes('otros') ? 'checked' : '' %>> Otros</label>
             </fieldset>
         <p></p>
-            <label><strong>Mensaje:</strong>
+            <label><strong>Mensaje:</strong> <br><br>
                 <textarea name="message" required><%= message || '' %></textarea>
             </label>
         <p></p>
-            <button type="submit">Enviar</button>
+            <button class="btnFormulario" type="submit">Enviar</button>
     </form>
 
         <p class="volver"><a href="/">Volver al inicio</a> </p>
