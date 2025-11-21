@@ -205,6 +205,30 @@ form h2 {
     color: var(--text)
 }
 
+.checkboxFormulario{
+    border: solid var(--text) 0.1px;
+    border-radius: 2%;
+}
+
+.btnFormulario{
+    display: flex;
+    justify-content: center;
+    background-color: #ff7ceb;
+    color: var(--panel);
+    border: #fd22dc;
+    padding: 0.5rem 1rem;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 0.5rem;
+    transition: 0.3s ease;
+}
+
+.btnFormulario:hover{
+    background-color: var(--primary);
+    color: var(--text)
+}
+
+
 #login p{
      font-size: 18px;
 }
