@@ -39,11 +39,12 @@ const buscarProducto = id => productos.find(p => p.id === id);
 document.addEventListener('DOMContentLoaded', () => {
     // --- 1. DATOS DE LOS BEST SELLERS (Reemplaza lo que antes venía de EJS) ---
     const bestSellersData = [
-        { imageUrl: 'img/producto1.jpg', name: 'Mochila Urbana', price: '45€' },
-        { imageUrl: 'img/producto2.jpg', name: 'Zapatillas Pro', price: '99€' },
-        { imageUrl: 'img/producto3.jpg', name: 'Gafas de Sol Clásicas', price: '29€' },
-        { imageUrl: 'img/producto4.jpg', name: 'Sudadera Algodón', price: '55€' },
-        // ... puedes añadir más objetos aquí
+        { imgb:"./img/bestseller-flor.jpg", name: 'Choker Flor'},
+        { imgb:"./img/bestseller-marrón.jpg", name: 'Eugenia marrón' },
+        { imgb:"./img/bestsellers (2).jpg", name: 'Pepita y puños' },
+        { imgb:"./img/bestsellers (3).jpg", name: 'Manuela y choker' },
+        { imgb:"./img/bestsellers (4).jpg", name: 'Valeria con encaje' },
+
     ];
 
     const track = document.getElementById('card-track');
@@ -57,10 +58,9 @@ document.addEventListener('DOMContentLoaded', () => {
             // **Paso 1: Crear la estructura HTML como una cadena de texto (Template String)**
             const cardHTML = `
                 <div class="card">
-                    <img src="${item.imageUrl}" alt="${item.name}" class="card-image">
+                    <img src="${item.imgb}" alt="${item.name}" class="card-image">
                     <div class="card-content">
                         <h4>${item.name}</h4>
-                        <p>${item.price}</p>
                     </div>
                 </div>
             `;

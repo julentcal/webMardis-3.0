@@ -133,12 +133,18 @@ main .card{
   transition: transform 0.4s ease-in-out; 
 }
 
+.slider-track img{
+    width: 100%;
+    height: auto;
+}
+
 /* Estilos de las tarjetas dentro del carril */
 .slider-track .card {
   /* Propiedad clave: evita que Flexbox intente encoger las tarjetas */
   flex-shrink: 0; 
   width: 250px; /* Ancho fijo para cada tarjeta */
   /* (Añade aquí los estilos de tu tarjeta, como el hover que ya creaste) */
+    height: 350px;
 }
 
 /* Estilos de las flechas */
