@@ -1,20 +1,20 @@
 :root{
   --bg:#ff7ceb;       
-  --panel:#fff9ba;     
+  --panel:#ffffea;     
   --muted:#ff96f1;     
-  --text:#ff46da;      
-  --primary:#fff70b;   
+  --text:#ff00bb;      
+  --primary:#ffff3d;   
   --font-family: 'neue';
 }
 
 * {
+    margin: 0;
+    padding:0;
     box-sizing: border-box;
     font-family: 'neue';
 }
 
 body{
-    margin: auto;
-    font-family: 'neue';
     color: var(--text);
     background-color: #fffde7;
     background: var(--panel);
@@ -22,33 +22,35 @@ body{
 
 /*HEADER*/
 header{
-    display: flex;
+    display:block;
     align-items: center;
-    background-color: #fffa9d;
+    background-color: #fffcc4;
     padding: 1rem 5rem;
-    justify-content: space-between;
+    text-align: center;
     position: sticky;
     top:0;
-    z-index: 10;
 }
 
 header h1{
-    margin: 0;
     font-size: 4rem;
     font-family: 'mardis';
 }
 
 header .btnh{
-    background-color: #ff7ceb;
-    color: var(--muted);
+    background-color:var(--primary);
+    color: var(--text);
     border: none;
-    text-decoration: none;
     padding: 0.6rem 0.8rem;
-    margin: 0px;
-    font-size: 0.8rem;
+    
     cursor: pointer;
     border-radius: 0.5rem;
-    transition: background-color 0.4s ease;
+    transition: 0.4s ease;
+}
+
+.btnh a{
+    text-decoration: none;
+    font-family: 'neue';
+    font-size: 1rem;
 }
 
 .btnh:hover{
@@ -57,7 +59,6 @@ header .btnh{
 }
 
 nav a:hover{ /*NO FUNCIONA*/
-    text-decoration: none;
     list-style-type: none;
 }
 
@@ -106,6 +107,62 @@ main .card{
     font-size: 16px;
 }
 
+/*BEST SELLERS*/
+/* Contenedor principal para posicionar flechas y limitar el ancho */
+.bestsellers-slider {
+  position: relative; /* Clave para posicionar las flechas */
+  width: 90%; /* Ancho que ocupará el slider en tu página */
+  margin: 0 auto;
+}
+
+/* El visor que oculta lo que está fuera de su límite */
+.slider-viewport {
+  overflow: hidden; /* **Clave: oculta las tarjetas que se salen** */
+  padding: 20px 0;
+}
+
+/* El carril o "pista" que contendrá y moverá las tarjetas */
+.slider-track {
+  display: flex; /* **Clave: coloca las tarjetas en fila** */
+  gap: 20px; /* Espacio entre tarjetas */
+  
+  /* Inicialmente, todas las tarjetas están en su posición (0% de desplazamiento) */
+  transform: translateX(0); 
+  
+  /* Añadimos transición para que el movimiento sea suave, NO instantáneo */
+  transition: transform 0.4s ease-in-out; 
+}
+
+/* Estilos de las tarjetas dentro del carril */
+.slider-track .card {
+  /* Propiedad clave: evita que Flexbox intente encoger las tarjetas */
+  flex-shrink: 0; 
+  width: 250px; /* Ancho fijo para cada tarjeta */
+  /* (Añade aquí los estilos de tu tarjeta, como el hover que ya creaste) */
+}
+
+/* Estilos de las flechas */
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  
+  /* Estilos visuales del botón */
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.prev-arrow {
+  left: -20px; /* Lo desplaza ligeramente hacia afuera del contenedor */
+}
+
+.next-arrow {
+  right: -20px;
+}
 
 
 /*CARDS*/
@@ -141,9 +198,14 @@ img {
     border-radius: 20px;
 }
 
+.card img:hover{
+    transform: scale(1.08);
+    box-shadow: 0 10px 20px rgba(255, 96, 255, 0.2);
+}
+
 .card button{
-    background-color: var(--bg);
-    color: #fffbc9;
+    background-color: var(--primary);
+    color: var(--text);
     border: none;
     padding: 0.5rem 1rem;
     font-size: 1rem;
@@ -157,8 +219,8 @@ img {
 }
 
 .card button:hover{
-    background-color: var(--primary);
-    color: var(--text);
+    background-color: var(--text);
+    color: var(--primary);
 }
 
 /*CARRITO*/
@@ -192,8 +254,8 @@ form h2 {
 }
 
 .btnform{
-    background-color: #ff7ceb;
-    color: var(--panel);
+    background-color:var(--primary);
+    color: var(--text);
     border: #fd22dc;
     padding: 0.5rem 1rem;
     font-size: 20px;
@@ -203,8 +265,8 @@ form h2 {
 }
 
 .btnform:hover{
-    background-color: var(--primary);
-    color: var(--text)
+    background-color: var(--text);
+    color: var(--primary);
 }
 
 .checkboxFormulario{
@@ -226,8 +288,8 @@ form h2 {
 }
 
 .btnFormulario:hover{
-    background-color: var(--primary);
-    color: var(--text)
+    background-color: var(--text);
+    color: var(--primary);
 }
 
 
@@ -236,8 +298,8 @@ form h2 {
 }
 
 .btnlogin{
-    background-color: #ff7ceb;
-    color: var(--panel);
+    background-color:var(--primary);
+    color: var(--text);
     border: #fd22dc;
     padding: 0.5rem 1rem;
     font-size: 20px;
@@ -247,8 +309,8 @@ form h2 {
 }
 
 .btnlogin:hover{
-    background-color: var(--primary);
-    color: var(--text)
+    background-color: var(--text);
+    color: var(--primary);
 }
 
 .volver{
@@ -292,8 +354,8 @@ form h2 {
 }
 
 .login button :hover{
-    background-color: var(--primary);
-    color: var(--text)
+    background-color: var(--text);
+    color: var(--primary);
 }
 
 .perfil {
@@ -314,8 +376,8 @@ form h2 {
 }
 
 .perfil button :hover{
-    background-color: var(--primary);
-    color: var(--text)
+    background-color: var(--text);
+    color: var(--primary);
 }
 
 /*FOOTER*/

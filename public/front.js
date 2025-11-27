@@ -35,6 +35,83 @@ const productos = [...catbolsos, ...catcomple];
 
 const buscarProducto = id => productos.find(p => p.id === id);
 
+//BEST SELLERS
+document.addEventListener('DOMContentLoaded', () => {
+    // --- 1. DATOS DE LOS BEST SELLERS (Reemplaza lo que antes venía de EJS) ---
+    const bestSellersData = [
+        { imageUrl: 'img/producto1.jpg', name: 'Mochila Urbana', price: '45€' },
+        { imageUrl: 'img/producto2.jpg', name: 'Zapatillas Pro', price: '99€' },
+        { imageUrl: 'img/producto3.jpg', name: 'Gafas de Sol Clásicas', price: '29€' },
+        { imageUrl: 'img/producto4.jpg', name: 'Sudadera Algodón', price: '55€' },
+        // ... puedes añadir más objetos aquí
+    ];
+
+    const track = document.getElementById('card-track');
+    
+    // --- 2. FUNCIÓN PARA CREAR Y AÑADIR LAS TARJETAS AL DOM ---
+    function renderCards() {
+        // Limpiamos el contenedor (opcional, pero buena práctica)
+        track.innerHTML = ''; 
+
+        bestSellersData.forEach(item => {
+            // **Paso 1: Crear la estructura HTML como una cadena de texto (Template String)**
+            const cardHTML = `
+                <div class="card">
+                    <img src="${item.imageUrl}" alt="${item.name}" class="card-image">
+                    <div class="card-content">
+                        <h4>${item.name}</h4>
+                        <p>${item.price}</p>
+                    </div>
+                </div>
+            `;
+            
+            // **Paso 2: Insertar la estructura en el carril**
+            track.insertAdjacentHTML('beforeend', cardHTML);
+        });
+    }
+
+    // Llama a la función para que se ejecute cuando se cargue la página
+    renderCards();
+    
+    // ----------------------------------------------------
+    // --- 3. A partir de aquí, continúa con la lógica del Carrusel ---
+    // (Todo el código de manejo de flechas que te di antes va aquí)
+    // ----------------------------------------------------
+    const prevButton = document.querySelector('.prev-arrow');
+    const nextButton = document.querySelector('.next-arrow');
+    const cardWidth = 270; 
+    let currentPosition = 0; 
+
+    const totalCards = bestSellersData.length;
+    const cardsInView = 3; 
+    
+    // ... (Tu código de manejo de botones nextButton.addEventListener, etc.)
+    
+    nextButton.addEventListener('click', () => {
+      if (currentPosition < totalCards - cardsInView) {
+        currentPosition++;
+        track.style.transform = `translateX(-${currentPosition * cardWidth}px)`;
+      }
+      updateArrows();
+    });
+
+    prevButton.addEventListener('click', () => {
+      if (currentPosition > 0) {
+        currentPosition--;
+        track.style.transform = `translateX(-${currentPosition * cardWidth}px)`;
+      }
+      updateArrows();
+    });
+  
+    function updateArrows() {
+      prevButton.disabled = currentPosition === 0;
+      nextButton.disabled = currentPosition >= totalCards - cardsInView;
+    }
+    
+    updateArrows(); 
+});
+
+
 //creamos cards de bolsos
 const catalogob = document.querySelector("#gridBolsos");
 
