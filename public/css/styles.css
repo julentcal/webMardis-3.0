@@ -105,28 +105,23 @@ main .card{
 }
 
 /*BEST SELLERS*/
-/* Contenedor principal para posicionar flechas y limitar el ancho */
+
 .bestsellers-slider {
   position: relative; /* Clave para posicionar las flechas */
-  width: 90%; /* Ancho que ocupará el slider en tu página */
+  width: 90%;
   margin: 0 auto;
 }
 
-/* El visor que oculta lo que está fuera de su límite */
 .slider-viewport {
-  overflow: hidden; /* **Clave: oculta las tarjetas que se salen** */
+  overflow: hidden; 
   padding: 20px 0;
 }
 
 /* El carril o "pista" que contendrá y moverá las tarjetas */
 .slider-track {
-  display: flex; /* **Clave: coloca las tarjetas en fila** */
-  gap: 20px; /* Espacio entre tarjetas */
-  
-  /* Inicialmente, todas las tarjetas están en su posición (0% de desplazamiento) */
+  display: flex; 
+  gap: 20px; 
   transform: translateX(0); 
-  
-  /* Añadimos transición para que el movimiento sea suave, NO instantáneo */
   transition: transform 0.4s ease-in-out; 
 }
 
@@ -139,9 +134,8 @@ main .card{
 .slider-track .card {
   /* Propiedad clave: evita que Flexbox intente encoger las tarjetas */
   flex-shrink: 0; 
-  width: 250px; /* Ancho fijo para cada tarjeta */
-  /* (Añade aquí los estilos de tu tarjeta, como el hover que ya creaste) */
-    height: 350px;
+  width: 250px; 
+  height: 350px;
 }
 
 /* Estilos de las flechas */

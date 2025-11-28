@@ -37,7 +37,7 @@ const buscarProducto = id => productos.find(p => p.id === id);
 
 //BEST SELLERS
 document.addEventListener('DOMContentLoaded', () => {
-    // --- 1. DATOS DE LOS BEST SELLERS (Reemplaza lo que antes venía de EJS) ---
+    //DATOS DE LOS BEST SELLERS 
     const bestSellersData = [
         { imgb:"./img/bestseller-flor.jpg", name: 'Choker Flor'},
         { imgb:"./img/bestseller-marrón.jpg", name: 'Eugenia marrón' },
@@ -48,13 +48,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const track = document.getElementById('card-track');
     
-    // --- 2. FUNCIÓN PARA CREAR Y AÑADIR LAS TARJETAS AL DOM ---
+    //FUNCIÓN PARA CREAR Y AÑADIR LAS TARJETAS AL DOM 
     function renderCards() {
-        // Limpiamos el contenedor (opcional, pero buena práctica)
+        // Limpiamos el contenedor
         track.innerHTML = ''; 
 
         bestSellersData.forEach(item => {
-            // **Paso 1: Crear la estructura HTML como una cadena de texto (Template String)**
+            //Crear la estructura HTML como una cadena de texto
             const cardHTML = `
                 <div class="card">
                     <img src="${item.imgb}" alt="${item.name}" class="card-image">
@@ -64,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             `;
             
-            // **Paso 2: Insertar la estructura en el carril**
+            //Insertar la estructura en el carril
             track.insertAdjacentHTML('beforeend', cardHTML);
         });
     }
@@ -72,10 +72,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Llama a la función para que se ejecute cuando se cargue la página
     renderCards();
     
-    // ----------------------------------------------------
-    // --- 3. A partir de aquí, continúa con la lógica del Carrusel ---
-    // (Todo el código de manejo de flechas que te di antes va aquí)
-    // ----------------------------------------------------
+    // --- 3. A partir de aquí, continúa con la lógica del Carrusel ---   
     const prevButton = document.querySelector('.prev-arrow');
     const nextButton = document.querySelector('.next-arrow');
     const cardWidth = 270; 
@@ -83,9 +80,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const totalCards = bestSellersData.length;
     const cardsInView = 3; 
-    
-    // ... (Tu código de manejo de botones nextButton.addEventListener, etc.)
-    
+       
     nextButton.addEventListener('click', () => {
       if (currentPosition < totalCards - cardsInView) {
         currentPosition++;
