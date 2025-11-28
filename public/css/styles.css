@@ -50,16 +50,13 @@ header .btnh{
 .btnh a{
     text-decoration: none;
     font-family: 'neue';
-    font-size: 1rem;
+    font-size: 1.1rem;
+    list-style-type: none;
 }
 
-.btnh:hover{
+.btnh a:hover{
     background-color: var(--primary);
     color: var(--text);
-}
-
-nav a:hover{ /*NO FUNCIONA*/
-    list-style-type: none;
 }
 
 .arriba{

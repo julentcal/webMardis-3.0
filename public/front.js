@@ -44,7 +44,6 @@ document.addEventListener('DOMContentLoaded', () => {
         { imgb:"./img/bestsellers (2).jpg", name: 'Pepita y puños' },
         { imgb:"./img/bestsellers (3).jpg", name: 'Manuela y choker' },
         { imgb:"./img/bestsellers (4).jpg", name: 'Valeria con encaje' },
-
     ];
 
     const track = document.getElementById('card-track');
